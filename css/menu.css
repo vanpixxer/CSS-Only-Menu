@@ -41,6 +41,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.4s ease;
 }
 
 /* Create top and bottom lines of hamburger menu icon */
@@ -58,5 +59,27 @@
 .menu-wrap .hamburger > div:after {
     top: 10px;
 }
+
+/* The hamburger menu is in a check box so when we click it we put it in a checked state */
+
+/* Animating the toggler */
+/* We don't want to style the check box we want to style the div right after .hamburger div */
+.menu-wrap .toggler:checked + .hamburger > div {
+    transform: rotate(135deg);
+}
+
+/* Turn 3 hamburger lines into an X */
+.menu-wrap .toggler:checked + .hamburger > div:before,
+.menu-wrap .toggler:checked + .hamburger > div:after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+/* Rotate menu icon on hover when checked */
+.menu-wrap .toggler:checked:hover + .hamburger > div {
+    transform: rotate(225deg);
+}
+
+
 
 
